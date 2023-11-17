@@ -1,6 +1,7 @@
 import { http, HttpResponse } from "msw";
 import diseaseData from "./data/disease.json";
 import medicineData from "./data/medicine.json";
+import nutrientData from "./data/nutrient.json";
 
 const diseaseMap = diseaseData.reduce((map, data) => {
   return map.set(data.disease_code, data);
@@ -15,14 +16,20 @@ const notFoundError = new HttpResponse("404 not found", {
 
 function getSeason() {
   const month = new Date().getMonth();
-  if ([0, 1, 11].includes(month)) return "winter";
+  if ([0, 1, 10, 11].includes(month)) return "winter";
   if (month < 5) return "spring";
   if (month < 8) return "summer";
   return "autumn";
 }
 
 function getSeasonDiseaseList(season) {
-  const disease_list = diseaseData.filter((e) => e.disease_season === season);
+  const disease_list = diseaseData
+    .filter((e) => e.disease_season === season)
+    .map(({ disease_code, disease_name, disease_image }) => ({
+      disease_code,
+      disease_name,
+      disease_image,
+    }));
   return disease_list;
 }
 
@@ -48,9 +55,10 @@ export const handlers = [
     const { query } = params;
     const filtered = diseaseData
       .filter((e) => e.disease_name.includes(query))
-      .map(({ disease_code, disease_name }) => ({
+      .map(({ disease_code, disease_name, disease_image }) => ({
         disease_code,
         disease_name,
+        disease_image,
       }));
 
     return HttpResponse.json(filtered);
@@ -83,6 +91,18 @@ export const handlers = [
     );
     return HttpResponse.json(medicine_list);
   }),
+  http.get("/api/medicine/representation", () => {
+    const medicine_list = medicineData
+      .filter(
+        (data) =>
+          diseaseMap.get(data.disease_code)?.disease_season === getSeason(),
+      )
+      .map((data) => ({
+        ...data,
+        disease_name: diseaseMap.get(data.disease_code).disease_name,
+      }));
+    return HttpResponse.json(medicine_list.slice(0, 4));
+  }),
   http.get("/api/medicine/:id", ({ params }) => {
     const { id } = params;
     const data = medicineData.find(({ medicine_code }) => medicine_code === id);
@@ -94,10 +114,49 @@ export const handlers = [
       });
     return HttpResponse.json({
       ...data,
-      disease_name: null,
       disease_code: null,
     });
   }),
+  http.get("/api/nutrients", () => {
+    return HttpResponse.json(nutrientData);
+  }),
+  http.get("/api/nutrients/search/:query", ({ params }) => {
+    const { query } = params;
+    const data = nutrientData.filter(({ nutrients_name }) =>
+      nutrients_name.includes(query),
+    );
+    if (data === undefined) return notFoundError.clone();
+    return HttpResponse.json(data);
+  }),
+  http.get("/api/nutrients/representation", () => {
+    const nutrient_list = nutrientData.filter((data) =>
+      data.disease_codes.some(
+        (code) => diseaseMap.get(code)?.disease_season === getSeason(),
+      ),
+    );
+    return HttpResponse.json(nutrient_list.slice(0, 4));
+  }),
+  http.get("/api/nutrients/:id", ({ params }) => {
+    const { id: paramId } = params;
+    const data = nutrientData.find(({ id }) => {
+      return String(id) === paramId;
+    });
+    if (data === undefined) return notFoundError.clone();
+
+    const result = {
+      id: data.id,
+      image_url: data.image_url,
+      nutrients_name: data.nutrients_name,
+      nutrients_efficiency: data.nutrients_efficiency,
+      diseases: data.disease_codes.map((code) => ({
+        code,
+        name: diseaseMap.get(code).disease_name,
+      })),
+    };
+
+    return HttpResponse.json(result);
+  }),
+
   http.get("/api/invalid", () => {
     return new HttpResponse("404 not found", {
       status: 404,

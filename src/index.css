@@ -18,6 +18,7 @@ html, body {
 a {
   text-decoration: none;
   outline: none;
+  color: inherit;
 }
 a:hover, a:active {
   text-decoration: none;

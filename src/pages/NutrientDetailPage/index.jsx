@@ -1,42 +1,42 @@
 import { useMemo, useCallback, Suspense } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import MedicineDetail from "./MedicineDetail.jsx";
-import MedicineDetailSkeleton from "./MedicineDetailSkeleton.jsx";
+import NutrientDetail from "./NutrientDetail.jsx";
+import NutrientDetailSkeleton from "./NutrientDetailSkeleton.jsx";
 import SearchBar from "../../components/SearchBar.jsx";
 import CenterMain from "../../components/CenterMain.jsx";
 import NotFound from "../../components/NotFound.jsx";
 import ErrorBoundary from "../../components/ErrorBoundary.jsx";
 import { fetchAxios } from "../../utils/utils.js";
 
-function MedicineDetailMain({ medicineId }) {
+function NutrientDetailMain({ nutrientId }) {
   const resource = useMemo(
-    () => fetchAxios(`/api/medicine/${medicineId}`),
-    [medicineId],
+    () => fetchAxios(`/api/nutrients/${nutrientId}`),
+    [nutrientId],
   );
   return (
     <ErrorBoundary
       fallback={<NotFound to="../" buttonText="목록으로" />}
-      errorKey={medicineId}
+      errorKey={nutrientId}
     >
-      <Suspense fallback={<MedicineDetailSkeleton />}>
-        <MedicineDetail resource={resource} />
+      <Suspense fallback={<NutrientDetailSkeleton />}>
+        <NutrientDetail resource={resource} />
       </Suspense>
     </ErrorBoundary>
   );
 }
 
-export default function MedicineDetailPage() {
-  const { medicineId } = useParams();
+export default function NutrientDetailPage() {
+  const { nutrientId } = useParams();
   const navigate = useNavigate();
   const onSearch = useCallback(
     (param) => {
-      axios.get(`/api/medicine/search/${param}`).then(({ data }) => {
+      axios.get(`/api/nutrients/search/${param}`).then(({ data }) => {
         if (data.length === 0) {
           console.log("찾는 게 없어요!");
           return;
         }
-        navigate(`/medicine/medicine/${data[0].medicine_code}`);
+        navigate(`/medicine/nutrient/${data[0].id}`);
       });
     },
     [navigate],
@@ -45,11 +45,11 @@ export default function MedicineDetailPage() {
   return (
     <CenterMain>
       <SearchBar
-        api="/api/medicine/search/"
-        placeholder="의약품을 입력해 주세요"
+        api="/api/nutrients/search/"
+        placeholder="영양제를 입력해 주세요"
         onSearch={onSearch}
       />
-      <MedicineDetailMain medicineId={medicineId} />
+      <NutrientDetailMain nutrientId={nutrientId} />
     </CenterMain>
   );
 }

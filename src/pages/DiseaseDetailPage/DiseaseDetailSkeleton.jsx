@@ -1,38 +1,32 @@
 import styled from "styled-components";
-import CenterMain from "../../components/CenterMain.jsx";
-import { TitleSkeleton, PSkeleton } from "../../components/skeletons.jsx";
+import { Title, SubTitle, Bold } from "../../components/paragraphs.jsx";
+import { SubTitleSkeleton, PSkeleton } from "../../components/skeletons.jsx";
 
 const SummeryWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   gap: 60px;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 
 const Pic = styled.div`
   width: 340px;
   height: 480px;
   background-color: #ccc;
-`;
-
-const Title = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 700;
-`;
-
-const SubTitle = styled.h3`
-  font-size: 1.2rem;
-  font-weight: 600;
+  flex-shrink: 0;
 `;
 
 export default function DiseaseDetailSkeleton() {
   return (
-    <CenterMain>
+    <>
       <SummeryWrapper>
-        <Pic></Pic>
+        <Pic />
         <div className="descriptions">
-          <TitleSkeleton />
-          <SubTitle>질병소개</SubTitle>
+          <SubTitleSkeleton></SubTitleSkeleton>
+          <Bold>질병증상</Bold>
           <PSkeleton />
         </div>
       </SummeryWrapper>
@@ -51,6 +45,6 @@ export default function DiseaseDetailSkeleton() {
           <PSkeleton />
         </section>
       </article>
-    </CenterMain>
+    </>
   );
 }

@@ -9,7 +9,7 @@ export default function HealthGuidePage({ content }) {
   return (
     <>
       <Banner page="healthGuide" />
-      <CenterMain>
+      <CenterMain $gap={20}>
         <Title>{seasonString}철 건강 가이드</Title>
         <HealthGuideArticle content={content} />
       </CenterMain>

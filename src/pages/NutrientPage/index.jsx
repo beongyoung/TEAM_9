@@ -1,7 +1,6 @@
 import { useState, useMemo, Suspense } from "react";
-import { useLocation } from "react-router-dom";
 import styles from "styled-components";
-import MedicineList from "./MedicineList.jsx";
+import NutrientList from "./NutrientList.jsx";
 import ErrorBoundary from "../../components/ErrorBoundary.jsx";
 import Banner from "../../components/Banner.jsx";
 import SearchBar from "../../components/SearchBar.jsx";
@@ -15,17 +14,8 @@ const SearchHeader = styles.div`
   gap: 10px;
 `;
 
-function useSearchParam() {
-  const location = useLocation();
-  const urlSearch = new URLSearchParams(location.search);
-  return urlSearch.get("query");
-}
-
-export default function MedicinePage() {
-  const param = useSearchParam();
-  const [query, setQuery] = useState(
-    param === null ? "/api/medicine" : `/api/medicine/search/${param}`,
-  );
+export default function NutrientPage() {
+  const [query, setQuery] = useState("/api/nutrients");
   const resource = useMemo(() => fetchAxios(query), [query]);
 
   return (
@@ -33,19 +23,19 @@ export default function MedicinePage() {
       <Banner page="medicine" />
       <CenterMain>
         <SearchHeader>
-          <Title>{getSeasonString()} 질병 의약품</Title>
+          <Title>{getSeasonString()} 질병 영양제</Title>
           <SearchBar
-            api="/api/medicine/search/"
-            placeholder="의약품을 입력해 주세요"
+            api="/api/nutrients/search/"
+            placeholder="영양제를 입력해 주세요"
             onSearch={(param) => {
-              setQuery(`/api/medicine/search/${param}`);
+              setQuery(`/api/nutrients/search/${param}`);
             }}
             canBlank
           />
         </SearchHeader>
         <ErrorBoundary fallback={<div>Error!</div>} errorKey={query}>
           <Suspense fallback={<div>Loading...</div>}>
-            <MedicineList resource={resource} />
+            <NutrientList resource={resource} />
           </Suspense>
         </ErrorBoundary>
       </CenterMain>

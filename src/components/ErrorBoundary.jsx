@@ -11,20 +11,20 @@ export default class ErrorBoundary extends Component {
     return { hasError: true };
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.errorKey !== prevProps.errorKey) {
+      setTimeout(() => this.setState({ hasError: false }), 100);
+    }
+  }
+
   componentDidCatch(error) {
-    this.setState({ errorKey: this.props.errorKey });
+    //this.setState({ errorKey: this.props.errorKey });
     console.error(error);
     return;
   }
 
   render() {
-    if (
-      this.state.hasError &&
-      (this.state.errorKey === undefined ||
-        this.state.errorKey === this.props.errorKey)
-    ) {
-      return this.props.fallback;
-    }
+    if (this.state.hasError) return this.props.fallback;
     return this.props.children;
   }
 }

@@ -16,3 +16,10 @@ export const Bold = styled.p`
   font-size: 1rem;
   font-weight: 600;
 `;
+
+export const Paragraph = styled.p`
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+`;

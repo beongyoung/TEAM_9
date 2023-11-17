@@ -43,7 +43,7 @@ export function fetchAxios(url, config = {}) {
 
 export function getSeasonCode() {
   const month = new Date().getMonth();
-  if ([0, 1, 11].includes(month)) return "winter";
+  if ([0, 1, 10, 11].includes(month)) return "winter";
   if (month < 5) return "spring";
   if (month < 8) return "summer";
   return "autumn";
@@ -51,7 +51,7 @@ export function getSeasonCode() {
 
 export function getSeasonString() {
   const month = new Date().getMonth();
-  if ([0, 1, 11].includes(month)) return "겨울";
+  if ([0, 1, 10, 11].includes(month)) return "겨울";
   if (month < 5) return "봄";
   if (month < 8) return "여름";
   return "가을";

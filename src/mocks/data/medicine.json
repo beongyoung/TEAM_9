@@ -214,5 +214,33 @@
         "medicine_usage": "",
         "medicine_caution": "",
         "medicine_image": ""
+    },
+
+    {
+        "disease_code": "J209-01",
+        "medicine_code": "300000001",
+        "medicine_name": "화O자 백신",
+        "medicine_efficacy": "이 약은 코로나를 예방합니다.",
+        "medicine_usage": "주사기로 주입하여 사용합니다.",
+        "medicine_caution": "젊은이가 사용했을 경우 쇼크사의 위험이 있습니다.",
+        "medicine_image": "https://www.health.kr/images/ext_images/pack_img/P_A11AOOOOO0313_03.jpg"
+    },
+    {
+        "disease_code": "J209-01",
+        "medicine_code": "300000002",
+        "medicine_name": "모O나 백신",
+        "medicine_efficacy": "이 약은 코로나를 예방합니다.",
+        "medicine_usage": "주사기로 주입하여 사용합니다.",
+        "medicine_caution": "늙은이한테는 사용하지 마십시오.",
+        "medicine_image": "https://www.health.kr/images/ext_images/pack_img/P_2017051100025_00.jpg"
+    },
+    {
+        "disease_code": "J209-02",
+        "medicine_code": "300000003",
+        "medicine_name": "먹는 코로나약",
+        "medicine_efficacy": "이 약은 코로나를 치료합니다.",
+        "medicine_usage": "1일 3회, 식후 30분 복용하십시오.",
+        "medicine_caution": "",
+        "medicine_image": ""
     }
 ]

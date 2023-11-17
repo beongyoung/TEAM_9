@@ -20,23 +20,20 @@ const ListItemThumbSkeleton = styled.div`
   background-color: #d9d9d9;
 `;
 
-const ListItemMedicine = styled.h3`
+const ListItemTitle = styled.h3`
   margin-bottom: 0;
 `;
 
-const ListItemName = styled.p``;
-
-export default function MedicineItem({ data }) {
+export default function NutrientItem({ data }) {
   return (
-    <Link to={`/medicine/medicine/${data.medicine_code}`}>
+    <Link to={`/medicine/nutrient/${data.id}`}>
       <ListItem>
-        {data.medicine_image ? (
-          <ListItemThumb src={data.medicine_image} alt={data.medicine_name} />
+        {data.image_url ? (
+          <ListItemThumb src={data.image_url} alt={data.nutrients_name} />
         ) : (
           <ListItemThumbSkeleton />
         )}
-        <ListItemMedicine>{data.medicine_name}</ListItemMedicine>
-        <ListItemName>{data.disease_name}</ListItemName>
+        <ListItemTitle>{data.nutrients_name}</ListItemTitle>
       </ListItem>
     </Link>
   );

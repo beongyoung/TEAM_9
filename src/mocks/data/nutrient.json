@@ -1,0 +1,51 @@
+[
+    {
+        "disease_codes": [
+            "J209-02"
+        ],
+        "nutrients_name": "영양제5",
+        "nutrients_efficiency": "효능5",
+        "image_url": "https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b",
+        "id": 5
+    },
+    {
+        "disease_codes": [
+            "A08",
+            "G439"
+        ],
+        "nutrients_name": "영양제1",
+        "nutrients_efficiency": "효능1",
+        "image_url": "https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b",
+        "id": 1
+    },
+    {
+        "disease_codes": [
+            "G439"
+        ],
+        "nutrients_name": "영양제2",
+        "nutrients_efficiency": "효능2",
+        "image_url": "https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b",
+        "id": 2
+    },
+        {
+        "disease_codes": [
+            "H04",
+            "J10.1"
+        ],
+        "nutrients_name": "영양제3",
+        "nutrients_efficiency": "효능3",
+        "image_url": "https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b",
+        "id": 3
+    },
+    {
+        "disease_codes": [
+            "J10.1",
+            "J209-01",
+            "J209-02"
+        ],
+        "nutrients_name": "영양제4",
+        "nutrients_efficiency": "효능4",
+        "image_url": "https://tgzzmmgvheix1905536.cdn.ntruss.com/2020/02/73d71a9a19234194bed8f823657dbe2b",
+        "id": 4
+    }
+]

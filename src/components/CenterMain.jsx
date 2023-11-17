@@ -5,10 +5,11 @@ const CenterMain = styled.main`
   max-width: 1200px;
   box-sizing: border-box;
   margin: 0px auto;
+  margin-bottom: 20px;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: ${({ $gap = 40 }) => $gap}px;
 `;
 
 export default CenterMain;
