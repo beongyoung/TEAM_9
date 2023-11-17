@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { SubTitle } from "../../../../components/paragraphs.jsx";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { SubTitle } from '../../../../components/paragraphs.jsx';
 
 const StyledFrameWrapper = styled.div`
   display: flex;
@@ -35,18 +35,18 @@ const StyledFrameWrapper = styled.div`
 `;
 
 const Button = styled.span(({ $activate = false } = {}) => ({
-  display: "inline-block",
-  height: "60px",
-  padding: "16px 24px",
-  boxSizing: "border-box",
-  border: $activate ? "none" : "2px solid #FF6B00",
-  borderRadius: "32px",
-  backgroundColor: $activate ? "#FF6B00" : "white",
-  color: $activate ? "white" : "black",
-  cursor: "pointer",
+  display: 'inline-block',
+  height: '60px',
+  padding: '16px 24px',
+  boxSizing: 'border-box',
+  border: $activate ? 'none' : '2px solid #FF6B00',
+  borderRadius: '32px',
+  backgroundColor: $activate ? '#FF6B00' : 'white',
+  color: $activate ? 'white' : 'black',
+  cursor: 'pointer',
 }));
 
-const FrameWrapper = () => {
+function SelectCommunity() {
   return (
     <StyledFrameWrapper>
       <div className="title">
@@ -67,6 +67,6 @@ const FrameWrapper = () => {
       </div>
     </StyledFrameWrapper>
   );
-};
+}
 
-export default FrameWrapper;
+export default SelectCommunity;

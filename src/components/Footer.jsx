@@ -2,6 +2,7 @@ import styles from "styled-components";
 import logoWhite from "../assets/seasonwell-logo-white.svg";
 
 const FooterWrapper = styles.footer`
+	margin-top: 10px;
 	width: 100%;
 	height: 180px;
 	display: flex;

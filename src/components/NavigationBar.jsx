@@ -3,6 +3,7 @@ import styles from "styled-components";
 import logo from "../assets/seasonwell-logo.svg";
 
 const NavWrapper = styles.nav`
+  margin-bottom: 10px;
 	position: relative;
 	z-index: 25;
 	width: 100%;
