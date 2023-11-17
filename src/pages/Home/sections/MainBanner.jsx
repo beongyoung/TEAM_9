@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const StyledOverlap = styled.div`
   height: 720px;
@@ -45,7 +45,7 @@ const StyledOverlap = styled.div`
 
   .text-wrapper {
     color: #ffffff;
-    font-family: 'Pretendard-Bold', Helvetica;
+    font-family: "Pretendard-Bold", Helvetica;
     font-size: 50px;
     font-weight: 700;
     letter-spacing: 0;
@@ -65,7 +65,7 @@ const StyledOverlap = styled.div`
 
   .div {
     color: #ffffff;
-    font-family: 'Pretendard-Bold', Helvetica;
+    font-family: "Pretendard-Bold", Helvetica;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 0;

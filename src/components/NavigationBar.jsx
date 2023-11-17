@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "styled-components";
-import logo from "../assets/seasonwell-logo.svg";
 
 const NavWrapper = styles.nav`
   margin-bottom: 10px;
@@ -56,7 +55,7 @@ export default function NavigationBar() {
     <NavWrapper>
       <Nav>
         <Link to="/">
-          <LogoImg src={logo} alt="시즌웰 로고" />
+          <LogoImg src="/seasonwell-logo.svg" alt="시즌웰 로고" />
         </Link>
         <Link to="/disease">
           <NavItem $active={firstPath === "disease"}>

@@ -1,9 +1,6 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" },
-    {
-      "source": "/api/(.*)",
-      "destination": "https://seasonwell.run.goorm.site/api/(.*)"
-    }
+    { "source": "/api/:path*", "destination": "https://seasonwell.run.goorm.site/api/:path*" },
+    { "source": "/(.*)", "destination": "/" }
   ]
 }

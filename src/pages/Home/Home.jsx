@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import MainBanner from './sections/MainBanner.jsx';
-import CurrentHealthGuide from './sections/Guide/CurrentDiseaseGuide.jsx';
-import MedicineRecommand from './sections/Medicine/MedicineRecommand.jsx';
-import CommnunityPreview from './sections/Community/SelectCommunity.jsx';
-import CenterMain from '../../components/CenterMain.jsx';
+import styled from "styled-components";
+import MainBanner from "./sections/MainBanner.jsx";
+import CurrentHealthGuide from "./sections/Guide/CurrentDiseaseGuide.jsx";
+import MedicineRecommand from "./sections/Medicine/MedicineRecommand.jsx";
+import CommnunityPreview from "./sections/Community/SelectCommunity.jsx";
+import CenterMain from "../../components/CenterMain.jsx";
 
 const StyledMain = styled.div`
   background-color: #ffffff;

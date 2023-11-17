@@ -1,5 +1,5 @@
-import GuideStyle from './GuideStyle.jsx';
-import { Bold } from '../../../../components/paragraphs.jsx';
+import GuideStyle from "./GuideStyle.jsx";
+import { Bold } from "../../../../components/paragraphs.jsx";
 
 export default function HealthGuide() {
   return (
