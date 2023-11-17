@@ -7,6 +7,7 @@ const BannerContainer = styles.div`
   width: 100%;
   height: 480px;
   overflow: hidden;
+  margin-bottom: 40px;
 `;
 
 const BannerGroup = styles.div`

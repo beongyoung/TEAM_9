@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "styled-components";
 import HealthGuideParagraph from "./HealthGuideParagraph.jsx";
 
@@ -15,31 +15,26 @@ const Button = styles.span(({ $activate = false } = {}) => ({
   border: $activate ? "none" : "2px solid #FF6B00",
   borderRadius: "32px",
   backgroundColor: $activate ? "#FF6B00" : "white",
+  color: $activate ? "white" : "black",
   cursor: "pointer",
 }));
 
-export default function HealthGuideArticle() {
-  const [tap, setTap] = useState("food");
-
+export default function HealthGuideArticle({ content }) {
   return (
     <>
       <ButtonContainer>
-        <Button
-          className="button"
-          $activate={tap === "food"}
-          onClick={() => setTap("food")}
-        >
-          식습관 가이드
-        </Button>
-        <Button
-          className="button"
-          $activate={tap === "living"}
-          onClick={() => setTap("living")}
-        >
-          생활 수칙
-        </Button>
+        <Link to="/healthGuide/food">
+          <Button className="button" $activate={content === "food"}>
+            식습관 가이드
+          </Button>
+        </Link>
+        <Link to="/healthGuide/living">
+          <Button className="button" $activate={content === "living"}>
+            생활 수칙
+          </Button>
+        </Link>
       </ButtonContainer>
-      <HealthGuideParagraph tap={tap} />
+      <HealthGuideParagraph tap={content} />
     </>
   );
 }

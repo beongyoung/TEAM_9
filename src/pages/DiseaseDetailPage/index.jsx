@@ -5,6 +5,7 @@ import DiseaseDetail from "./DiseaseDetail.jsx";
 import DiseaseDetailSkeleton from "./DiseaseDetailSkeleton.jsx";
 import SearchBar from "../../components/SearchBar.jsx";
 import CenterMain from "../../components/CenterMain.jsx";
+import NotFound from "../../components/NotFound.jsx";
 import ErrorBoundary from "../../components/ErrorBoundary.jsx";
 import { fetchAxios } from "../../utils/utils.js";
 
@@ -15,7 +16,7 @@ function DiseaseDetailMain({ diseaseId }) {
   );
   return (
     <ErrorBoundary
-      fallback={<div>페이지를 찾을 수 없음</div>}
+      fallback={<NotFound to="/medicine" buttonText="목록으로" />}
       errorKey={diseaseId}
     >
       <Suspense fallback={<DiseaseDetailSkeleton />}>

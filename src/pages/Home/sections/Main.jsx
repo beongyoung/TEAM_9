@@ -1,45 +1,45 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledOverlap = styled.div`
   height: 720px;
-  left: 0;
-  position: absolute;
-  top: 170px;
-  width: 1921px;
+  width: 100%;
+  position: relative;
 
   .unsplash-ym {
-    height: 720px;
-    left: 0;
     object-fit: cover;
+    width: 100%;
+    height: 100%;
     position: absolute;
+    left: 0;
     top: 0;
-    width: 1920px;
   }
 
   .rectangle {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
-    height: 720px;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    width: 100%;
+    height: 100%;
+    position: absolute;
     left: 0;
-    position: absolute;
     top: 0;
-    width: 1920px;
   }
 
-  .arrow {
-    height: 15px;
-    left: 1920px;
-    position: absolute;
-    top: 175px;
-    width: 1px;
-  }
-
-  .img {
-    height: 15px;
-    left: 1920px;
-    position: absolute;
-    top: 174px;
-    width: 1px;
+  .wrapper {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px 20px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 70px;
   }
 
   .text-wrapper {
@@ -47,11 +47,8 @@ const StyledOverlap = styled.div`
     font-family: "Pretendard-Bold", Helvetica;
     font-size: 50px;
     font-weight: 700;
-    left: 370px;
     letter-spacing: 0;
     line-height: 70px;
-    position: absolute;
-    top: 268px;
   }
 
   .frame {
@@ -61,10 +58,7 @@ const StyledOverlap = styled.div`
     gap: 10px;
     height: 52px;
     justify-content: center;
-    left: 370px;
     padding: 12px;
-    position: absolute;
-    top: 469px;
     width: 196px;
   }
 
@@ -90,14 +84,14 @@ export const Overlap = () => {
         src="https://c.animaapp.com/ULZ0sU3D/img/unsplash-0vw4inac-ym.png"
       />
       <div className="rectangle" />
-      <img className="arrow" alt="Arrow" src="https://c.animaapp.com/ULZ0sU3D/img/arrow-1.svg" />
-      <img className="img" alt="Arrow" src="https://c.animaapp.com/ULZ0sU3D/img/arrow-2.svg" />
-      <div className="text-wrapper">
-        식습관 가이드 <br />
-        알아보고 싶다면?
-      </div>
-      <div className="frame">
-        <div className="div">알아보러가기</div>
+      <div className="wrapper">
+        <div className="text-wrapper">
+          식습관 가이드 <br />
+          알아보고 싶다면?
+        </div>
+        <div className="frame">
+          <div className="div">알아보러가기</div>
+        </div>
       </div>
     </StyledOverlap>
   );

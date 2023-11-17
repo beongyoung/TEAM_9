@@ -1,14 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavigationBar from "./components/NavigationBar.jsx";
+import Footer from "./components/Footer.jsx";
 import DiseasePage from "./pages/DiseasePage";
 import DiseaseDetailPage from "./pages/DiseaseDetailPage";
 import MedicinePage from "./pages/MedicinePage";
 import MedicineDetailPage from "./pages/MedicineDetailPage";
 import HealthGuidePage from "./pages/HealthGuidePage";
-import {Home} from "./pages/Home/Home";
+import NotFoundPage from "./pages/NotFoundPage";
+import Home from "./pages/Home/Home.jsx";
 
 function Router() {
   return (
     <BrowserRouter>
+      <NavigationBar />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="disease">
@@ -19,8 +23,14 @@ function Router() {
           <Route path=":medicineId" element={<MedicineDetailPage />} />
           <Route path="" element={<MedicinePage />} />
         </Route>
-        <Route path="healthGuide" element={<HealthGuidePage />} />
+        <Route path="healthGuide">
+          <Route path="food" element={<HealthGuidePage content="food" />} />
+          <Route path="living" element={<HealthGuidePage content="living" />} />
+          <Route path="" element={<HealthGuidePage content="food" />} />
+        </Route>
+        <Route path={"*"} element={<NotFoundPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
