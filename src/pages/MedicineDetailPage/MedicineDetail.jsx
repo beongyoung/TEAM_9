@@ -26,8 +26,6 @@ export default function MedicineDetail({ resource }) {
         <div className="descriptions">
           <Bold>의약품 명</Bold>
           <Paragraph>{data.medicine_name}</Paragraph>
-          <Bold>질병소개</Bold>
-          <Paragraph>(api 미존재, 백엔드와 상의 예정)</Paragraph>
         </div>
       </Summery>
       <article>

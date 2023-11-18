@@ -1,56 +1,56 @@
 [
-    {
-        "board_no": 1,
-        "board_title": "테스트용",
-		"board_content": "게시글 내용",
-        "board_author": "doctor",
-        "disease_code": "A08",
-        "board_date": "2023-11-17T22:27:07.551471",
-        "board_type": 2
-    },
-    {
-        "board_no": 2,
-        "board_title": "테스트용123",
-		"board_content": "게시글 내용",
-        "board_author": "doctor",
-        "disease_code": "A08",
-        "board_date": "2023-11-17T22:27:12.152535",
-        "board_type": 1
-    },
-    {
-        "board_no": 3,
-        "board_title": "공지사항",
-        "board_content": "이건 공지사항이라는 거다...",
-        "board_author": "doctor",
-        "disease_code": "A08",
-        "board_date": "2023-11-17T22:27:07.551471",
-        "board_type": 2
-    },
-    {
-        "board_no": 4,
-        "board_title": "아무튼 테스트임",
-        "board_content": "보드 컨텐츠를 작성하시오.",
-        "board_author": "Lybell",
-        "disease_code": "A08",
-        "board_date": "2023-11-17T22:27:12.152535",
-        "board_type": 1
-    },
-    {
-        "board_no": 5,
-        "board_title": "구름톤",
-        "board_content": "제작자님 제가 영혼을 안 갈아서 만들었습니다",
-        "board_author": "Lybell",
-        "disease_code": "A08",
-        "board_date": "2023-11-17T22:27:07.551471",
-        "board_type": 2
-    },
-    {
-        "board_no": 6,
-        "board_title": "백엔드 개발자님",
-        "board_content": "항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...항상 DB와 데이터 관리와 관계형에 고통받느라고 수고하십니다 많이\n앞으로도 파이팅...",
-        "board_author": "Lybell",
-        "disease_code": "A08",
-        "board_date": "2023-11-17T22:27:12.152535",
-        "board_type": 1
-    }
+  {
+    "board_no": 1,
+    "board_title": "테스트용",
+    "board_content": "게시글 내용",
+    "board_author": "doctor",
+    "disease_code": "A08",
+    "board_date": "2023-11-17T22:27:07.551471",
+    "board_type": 2
+  },
+  {
+    "board_no": 2,
+    "board_title": "시즌웰 최고",
+    "board_content": "시즌웰 최고~",
+    "board_author": "그누",
+    "disease_code": "A08",
+    "board_date": "2023-11-17T22:27:12.152535",
+    "board_type": 1
+  },
+  {
+    "board_no": 3,
+    "board_title": "공지사항",
+    "board_content": "이건 공지사항이라는 거다...",
+    "board_author": "doctor",
+    "disease_code": "A08",
+    "board_date": "2023-11-17T22:27:07.551471",
+    "board_type": 2
+  },
+  {
+    "board_no": 4,
+    "board_title": "커피 그만 마시고 싶어요~",
+    "board_content": "시즌웰 짱~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~커피 그만 마시고 싶어요~",
+    "board_author": "Lybell",
+    "disease_code": "A08",
+    "board_date": "2023-11-17T22:27:12.152535",
+    "board_type": 1
+  },
+  {
+    "board_no": 5,
+    "board_title": "구름톤",
+    "board_content": "제작자님 제가 영혼을 안 갈아서 만들었습니다",
+    "board_author": "Lybell",
+    "disease_code": "A08",
+    "board_date": "2023-11-17T22:27:07.551471",
+    "board_type": 2
+  },
+  {
+    "board_no": 6,
+    "board_title": "",
+    "board_content": "",
+    "board_author": "Lybell",
+    "disease_code": "A08",
+    "board_date": "2023-11-17T22:27:12.152535",
+    "board_type": 1
+  }
 ]

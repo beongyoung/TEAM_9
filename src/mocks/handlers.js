@@ -4,6 +4,8 @@ import medicineData from "./data/medicine.json";
 import nutrientData from "./data/nutrient.json";
 import boardData from "./data/board.json";
 import commentData from "./data/comment.json";
+import personalMedicine from "./data/personalMedicine.json";
+import personalNutrients from "./data/personalNutrient.json";
 
 const diseaseMap = diseaseData.reduce((map, data) => {
   return map.set(data.disease_code, data);
@@ -127,6 +129,9 @@ export const handlers = [
       }));
     return HttpResponse.json(medicine_list.slice(0, 4));
   }),
+  http.get("/api/medicine/personal", () => {
+    return HttpResponse.json(personalMedicine);
+  }),
   http.get("/api/medicine/:id", ({ params }) => {
     const { id } = params;
     const data = medicineData.find(({ medicine_code }) => medicine_code === id);
@@ -163,6 +168,9 @@ export const handlers = [
     );
     return HttpResponse.json(nutrient_list.slice(0, 4));
   }),
+  http.get("/api/nutrients/personal", () => {
+    return HttpResponse.json(personalNutrients);
+  }),
   http.get("/api/nutrients/:id", ({ params }) => {
     const { id: paramId } = params;
     const data = nutrientData.find(({ id }) => {
@@ -175,7 +183,7 @@ export const handlers = [
       image_url: data.image_url,
       nutrients_name: data.nutrients_name,
       nutrients_efficiency: data.nutrients_efficiency,
-      diseases: data.disease_codes.map((code) => ({
+      disease: data.disease_codes.map((code) => ({
         code,
         name: diseaseMap.get(code).disease_name,
       })),

@@ -15,8 +15,9 @@ import WritePage from "./pages/CommunityPage/WritePage.jsx";
 import NotFoundPage from "./pages/NotFoundPage";
 import LoginPage from "./pages/auth/LoginPage.jsx";
 import LoginHandler from "./pages/auth/LoginHandler.jsx";
-import SignUpPage from "./pages/auth/SignUpPage.jsx";
 import PersonalRecommand from "./pages/RecommandPage/PersonalRecommand.jsx";
+import MedicineRecommand from "./pages/RecommandPage/MedicineRecommand.jsx";
+import NutrientRecommand from "./pages/RecommandPage/NutritionRecommand.jsx";
 import Home from "./pages/Home/Home.jsx";
 
 function Router() {
@@ -31,7 +32,7 @@ function Router() {
         />
         <Route path="auth">
           <Route path="login" element={<LoginPage />} />
-          <Route path="signup" element={<SignUpPage />} />
+          <Route path="signup" element={<Home />} />
         </Route>
         <Route path="disease">
           <Route path=":diseaseId" element={<DiseaseDetailPage />} />
@@ -39,7 +40,22 @@ function Router() {
         </Route>
         <Route path="medicine">
           <Route path="" element={<MedicineHubPage />} />
-          <Route path="recommand" element={<PersonalRecommand />} />
+          <Route path="recommand">
+            <Route path="medicine">
+              <Route path="result" element={<MedicineRecommand />} />
+              <Route
+                path=""
+                element={<PersonalRecommand recommandTarget="medicine" />}
+              />
+            </Route>
+            <Route path="nutrient">
+              <Route path="result" element={<NutrientRecommand />} />
+              <Route
+                path=""
+                element={<PersonalRecommand recommandTarget="nutrient" />}
+              />
+            </Route>
+          </Route>
           <Route path="medicine">
             <Route path=":medicineId" element={<MedicineDetailPage />} />
             <Route path="" element={<MedicinePage />} />
@@ -62,8 +78,8 @@ function Router() {
           <Route path="consult" element={<CommunityPage content="consult" />} />
           <Route path="review" element={<CommunityPage content="review" />} />
           <Route path="write" element={<WritePage content="write" />} />
-          <Route path=":postNumber" element={<CommunityDetailPage />} />
-          {/* <Route path="1" element={<CommunityDetailPage />} /> */}
+          <Route path="consult/:postNumber" element={<CommunityDetailPage />} />
+          <Route path="review/:postNumber" element={<CommunityDetailPage />} />
           <Route path="" element={<CommunityPage content="mainboard" />} />
         </Route>
         <Route path={"*"} element={<NotFoundPage />} />

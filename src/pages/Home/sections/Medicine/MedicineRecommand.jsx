@@ -12,11 +12,8 @@ const Wrapper = styled.div`
   .topBox {
     width: 100%;
     height: 40px;
-    display: flex;
     font-family: Pretendard;
-    font-size: 2rem;
-    align-items: center;
-    justify-content: center;
+    font-size: 1rem;
   }
 `;
 
@@ -24,7 +21,9 @@ export default function MedicineRecommand() {
   return (
     <Wrapper>
       <SectionTitle title="의약품 추천" link="/medicine" />
-      <div className="topBox">{getSeasonString()}철 의약품!</div>
+      <div className="topBox">
+        &quot;{getSeasonString()}&quot;에 인기가 많은 의약품
+      </div>
       <HubList
         api="/api/medicine/representation"
         mapper={(item) => <MedicineItem key={item.medicine_code} data={item} />}

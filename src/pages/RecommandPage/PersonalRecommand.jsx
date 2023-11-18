@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import CenterMain from "@/components/CenterMain.jsx";
 import { Title } from "@/components/paragraphs.jsx";
 import check from "@/assets/check.svg";
@@ -23,7 +24,7 @@ const Grey = styled.p`
 
 const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 `;
 
@@ -84,45 +85,24 @@ function Card({ id, selected, onSelect, caption }) {
 
 // A08 노로바이러스
 const cardKey = [
-  {
-    id: "J10.1",
-    name: "인플루엔자",
-  },
-  {
-    id: "J45.0",
-    name: "천식",
-  },
-  {
-    id: "G439",
-    name: "편두통",
-  },
-  {
-    id: "I10",
-    name: "고혈압",
-  },
-  {
-    id: "I63",
-    name: "뇌졸중",
-  },
-  {
-    id: "T33",
-    name: "동상",
-  },
-  {
-    id: "J209",
-    name: "감기",
-  },
-  {
-    id: "M25",
-    name: "퇴행성관절염",
-  },
-  {
-    id: "H04",
-    name: "안구건조증",
-  },
+  "콧물",
+  "인후통",
+  "기침",
+  "발열",
+  "설사",
+  "구토",
+  "치통",
+  "생리통",
+  "복통",
+  "호흡곤란",
+  "오한",
+  "출혈",
+  "발진",
+  "우울",
+  "소화불량",
 ];
 
-export default function PersonalRecommand() {
+export default function PersonalRecommand({ recommandTarget = "medicine" }) {
   const [selectedCards, setSelectedCards] = useState([]);
   const handleCardSelect = (cardId) => {
     setSelectedCards((prevSelected) => {
@@ -140,34 +120,33 @@ export default function PersonalRecommand() {
     });
   };
 
-  const handleSubmit = () => {
-    // Handle the submission of selected cards
-    console.log("Selected Cards:", selectedCards);
-    // Add your logic to send the selected cards to the server or perform other actions
-  };
-
   return (
     <>
       <TopMargin />
       <CenterMain>
         <div>
-          <Title>나의 맞춤 의약품 추천받기</Title>
+          <Title>
+            나의 맞춤 {recommandTarget === "nutrients" ? "영양제" : "의약품"}{" "}
+            추천받기
+          </Title>
           <SubTitle>본인의 건강 상태를 입력하세요</SubTitle>
-          <Grey>최대 5개까지 선택할 수 있어요</Grey>
+          <Grey>최대 4개까지 선택할 수 있어요</Grey>
         </div>
         <GridWrapper>
-          {cardKey.map(({ id, name }) => (
+          {cardKey.map((id) => (
             <Card
               key={id}
               id={id}
-              caption={name}
+              caption={id}
               selected={selectedCards.includes(id)}
               onSelect={handleCardSelect}
             />
           ))}
         </GridWrapper>
         <SubmitWrapper>
-          <SubmitButton onClick={handleSubmit}>Submit</SubmitButton>
+          <Link to="result" state={{ select: selectedCards }}>
+            <SubmitButton>Submit</SubmitButton>
+          </Link>
         </SubmitWrapper>
       </CenterMain>
     </>

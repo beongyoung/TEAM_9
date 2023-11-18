@@ -1,0 +1,82 @@
+[
+    {
+        "disease_codes": [
+            "A08",
+            "J10.1",
+            "J209",
+            "T33"
+        ],
+        "disease_names": [
+            "노로바이러스",
+            "인플루엔자",
+            "감기",
+            "동상"
+        ],
+        "nutrients_name": "비타민C",
+        "nutrients_efficiency": "항산화 작용으로 세포 손상을 예방하며, 콜라겐 생산을 촉진하고, 면역 체계를 강화하여 철의 흡수를 증가한다.",
+        "image_url": "https://st.kakaocdn.net/thumb/P750x750/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fshoppingstore%2Fproduct%2F20230614150840_50ad6b7dc94a4c2ea0e8f9f1ec7cb360.jpg",
+        "id": 2
+    },
+    {
+        "disease_codes": [
+            "I63",
+            "J45.0",
+            "M25"
+        ],
+        "disease_names": [
+            "뇌졸중",
+            "천식",
+            "퇴행성관절염"
+        ],
+        "nutrients_name": "비타민D",
+        "nutrients_efficiency": "칼슘 및 인의 흡수를 촉진하여 뼈 건강을 유지하며, 면역 체계를 강화한다.",
+        "image_url": "https://st.kakaocdn.net/thumb/P750x750/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fshoppingstore%2Fproduct%2F20211118153305_ac33eec604b243bc989815960ac872c5.jpg",
+        "id": 10
+    },
+    {
+        "disease_codes": [
+            "A08",
+            "J10.1",
+            "J209",
+            "T33"
+        ],
+        "disease_names": [
+            "노로바이러스",
+            "인플루엔자",
+            "감기",
+            "동상"
+        ],
+        "nutrients_name": "아연",
+        "nutrients_efficiency": "면역 체계를 지원하고, 세포 분열 및 성장을 촉진하며, 항산화 작용을 통해 호르몬을 제어하고 상처를 치유한다.",
+        "image_url": "https://st.kakaocdn.net/thumb/P750x750/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fshoppingstore%2Fproduct%2F20221104162437_c88168373f654454bafbb5f500061b65.jpg",
+        "id": 3
+    },
+    {
+        "disease_codes": [
+            "M25"
+        ],
+        "disease_names": [
+            "퇴행성관절염"
+        ],
+        "nutrients_name": "글루코사민",
+        "nutrients_efficiency": "관절 건강을 유지하고, 연골 형성을 지원하며, 퇴행성 관절염 증상을 완화한다.",
+        "image_url": "https://st.kakaocdn.net/thumb/P750x750/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fshoppingstore%2Fproduct%2F20210831152159_a150814ade984cf48a9a8c8775975292.jpg",
+        "id": 11
+    },
+    {
+        "disease_codes": [
+            "H04",
+            "I63",
+            "M25"
+        ],
+        "disease_names": [
+            "안구건조증",
+            "뇌졸중",
+            "퇴행성관절염"
+        ],
+        "nutrients_name": "오메가3",
+        "nutrients_efficiency": "뇌 건강을 촉진하고, 염증을 감소시키며, 심혈관계를 건강하게 유지하며, 관절 및 눈의 건강에 기여한다.",
+        "image_url": "https://st.kakaocdn.net/thumb/P750x750/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fshoppingstore%2Fproduct%2F20230719103736_3478992fde8b4d0196456609ee6bb793.jpg",
+        "id": 7
+    }
+]
