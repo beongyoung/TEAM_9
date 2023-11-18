@@ -16,9 +16,10 @@ function CommunityPreviewListRenderer({ resource }) {
   const boardList = resource().slice(0, 3);
   return (
     <Wrapper>
-      {boardList.map(({ board_no, board_title, board_content }) => {
+      {boardList.map(({ board_no, board_title, board_type, board_content }) => {
+        const boardGroupName = board_type === 1 ? "consult" : "review";
         return (
-          <Link to={`/community/${board_no}`} key={board_no}>
+          <Link to={`/community/${boardGroupName}/${board_no}`} key={board_no}>
             <CommunityPreviewArticle
               title={board_title}
               content={board_content}

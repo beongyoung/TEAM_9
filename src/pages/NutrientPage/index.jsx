@@ -5,6 +5,7 @@ import ErrorBoundary from "../../components/ErrorBoundary.jsx";
 import Banner from "../../components/Banner.jsx";
 import SearchBar from "../../components/SearchBar.jsx";
 import CenterMain from "../../components/CenterMain.jsx";
+import NotFound from "../../components/NotFound.jsx";
 import { Title } from "../../components/paragraphs.jsx";
 import { fetchAxios, getSeasonString } from "../../utils/utils.js";
 
@@ -33,7 +34,7 @@ export default function NutrientPage() {
             canBlank
           />
         </SearchHeader>
-        <ErrorBoundary fallback={<div>Error!</div>} errorKey={query}>
+        <ErrorBoundary fallback={<NotFound />} errorKey={query}>
           <Suspense fallback={<div>Loading...</div>}>
             <NutrientList resource={resource} />
           </Suspense>

@@ -5,6 +5,7 @@ import MedicineList from "./MedicineList.jsx";
 import ErrorBoundary from "../../components/ErrorBoundary.jsx";
 import Banner from "../../components/Banner.jsx";
 import SearchBar from "../../components/SearchBar.jsx";
+import NotFound from "../../components/NotFound.jsx";
 import CenterMain from "../../components/CenterMain.jsx";
 import { Title } from "../../components/paragraphs.jsx";
 import { fetchAxios, getSeasonString } from "../../utils/utils.js";
@@ -43,7 +44,7 @@ export default function MedicinePage() {
             canBlank
           />
         </SearchHeader>
-        <ErrorBoundary fallback={<div>Error!</div>} errorKey={query}>
+        <ErrorBoundary fallback={<NotFound />} errorKey={query}>
           <Suspense fallback={<div>Loading...</div>}>
             <MedicineList resource={resource} />
           </Suspense>

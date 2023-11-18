@@ -78,13 +78,15 @@ const CommunityDetailPage = () => {
         </ContentContainer>
         <CommentContainer>
           <h3>댓글</h3>
-          {comments.map((comment) => (
-            <div key={comment.id}>
-              <Line />
-              <strong>{comment.author}</strong>
-              <br /> {comment.text}
-            </div>
-          ))}
+          {comments == null
+            ? "없음"
+            : comments.map((comment) => (
+                <div key={comment.id}>
+                  <Line />
+                  <strong>{comment.author}</strong>
+                  <br /> {comment.text}
+                </div>
+              ))}
           <CommentTextarea
             placeholder="댓글을 입력하세요..."
             value={commentText}
