@@ -2,28 +2,56 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 
-const LoginHandeler = (props) => {
+const LoginHandler = (props) => {
   const navigate = useNavigate();
   const code = new URL(window.location.href).searchParams.get("code");
-  //인가코드 백으로 보내는 코드
+
   useEffect(() => {
     const kakaoLogin = async () => {
-      await axios({
-        method: "GET",
-        url: `${import.meta.env.VITE_REDIRECT_URL}/?code=${code}`,
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=utf-8", //json형태로 데이터를 보내겠다는뜻
-          "Access-Control-Allow-Origin": "*", //이건 cors 에러때문에 넣어둔것. 당신의 프로젝트에 맞게 지워도됨
-        },
-      }).then((res) => {
-        console.log(res);
-        // localStorage.setItem("name", res.data.account.kakaoName);
-        // 로그인이 성공하면 이동할 페이지
+      // Replace YOUR_KAKAO_CLIENT_ID with your actual Kakao client ID
+      const clientId = `${import.meta.env.VITE_API_KEY}`;
+
+      try {
+        // Exchange the code for an access token
+        const tokenResponse = await axios.post(
+          "https://kauth.kakao.com/oauth/token",
+          new URLSearchParams({
+            grant_type: "authorization_code",
+            client_id: clientId,
+            redirect_uri: `${import.meta.env.VITE_REDIRECT_URL}`, // Ensure this matches your Kakao app settings
+            code: code,
+          }),
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=utf-8",
+            },
+          },
+        );
+
+        // Get user information using the access token
+        const userInfoResponse = await axios.get(
+          "https://kapi.kakao.com/v2/user/me",
+          {
+            headers: {
+              Authorization: `Bearer ${tokenResponse.data.access_token}`,
+            },
+          },
+        );
+
+        // Handle user information as needed
+        console.log(userInfoResponse.data);
+
+        // Redirect to the home page after successful login
         navigate("/home");
-      });
+      } catch (error) {
+        console.error("Kakao login error:", error);
+      }
     };
-    kakaoLogin();
-  }, [props.history]);
+
+    if (code) {
+      kakaoLogin();
+    }
+  }, [code, navigate]);
 
   return (
     <div>
@@ -32,4 +60,4 @@ const LoginHandeler = (props) => {
   );
 };
 
-export default LoginHandeler;
+export default LoginHandler;
